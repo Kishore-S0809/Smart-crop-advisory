@@ -1,7 +1,9 @@
+import io
 import os
 import json
 import sys
 import traceback
+import zipfile
 from datetime import datetime
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -120,6 +122,16 @@ def _scan_root_for_datasets(root_path):
         for fn in filenames:
             if fn.lower().endswith(('.csv', '.xlsx', '.xls')):
                 files.append(os.path.join(root, fn))
+            elif fn.lower().endswith('.zip'):
+                zip_path = os.path.join(root, fn)
+                try:
+                    with zipfile.ZipFile(zip_path, 'r') as zf:
+                        for member in zf.namelist():
+                            if member.lower().endswith(('.csv', '.xlsx', '.xls')):
+                                # Encode as "zip:<zip_path>!<member>" so the caller can read it
+                                files.append(f"zip:{zip_path}!{member}")
+                except zipfile.BadZipFile:
+                    pass
     return files, image_roots
 
 
@@ -462,15 +474,38 @@ def main():
         pd = mods.get('pd')
         for csv_path in csv_files:
             try:
-                if csv_path.lower().endswith('.csv'):
+                if csv_path.startswith('zip:'):
+                    # Format: zip:<zip_file_path>!<member>
+                    rest = csv_path[len('zip:'):]
+                    if '!' not in rest:
+                        log(f"Skipping malformed zip path (expected 'zip:<file>!<member>'): {csv_path}")
+                        continue
+                    zip_file_path, member = rest.split('!', 1)
+                    with zipfile.ZipFile(zip_file_path, 'r') as zf:
+                        with zf.open(member) as fh:
+                            data = io.BytesIO(fh.read())
+                    file_ext = os.path.splitext(member)[1].lower()
+                    if file_ext == '.csv':
+                        df = pd.read_csv(data) if pd is not None else None
+                    else:
+                        df = pd.read_excel(data) if pd is not None else None
+                    display_path = f"{os.path.basename(zip_file_path)}!{member}"
+                    member_name = os.path.splitext(os.path.basename(member))[0]
+                elif csv_path.lower().endswith('.csv'):
                     df = pd.read_csv(csv_path) if pd is not None else None
+                    display_path = csv_path
+                    member_name = None
+                    file_ext = '.csv'
                 else:
                     df = pd.read_excel(csv_path) if pd is not None else None
+                    display_path = csv_path
+                    member_name = None
+                    file_ext = os.path.splitext(csv_path)[1].lower()
                 if df is None:
-                    log(f"Skipping {csv_path}: pandas unavailable")
+                    log(f"Skipping {display_path}: pandas unavailable")
                     continue
                 purpose = classify_csv_purpose(pd, df, csv_path)
-                base = os.path.splitext(os.path.basename(csv_path))[0]
+                base = member_name if member_name else os.path.splitext(os.path.basename(csv_path))[0]
                 save_basename = f"{base}_{purpose}"
                 # Route weather-like datasets to time-series model if possible
                 if purpose == 'weather':
@@ -482,17 +517,17 @@ def main():
                     preprocessing_desc = 'impute + scale numeric, impute + onehot categorical'
                     model_name = res['task'] if res else None
                 entry = {
-                    'path': csv_path,
+                    'path': display_path,
                     'type': 'csv',
                     'purpose': purpose,
                     'preprocessing': preprocessing_desc,
                     'model': model_name,
                     'metrics': res['metrics'] if res else None,
                     'saved_model': res['model_path'] if res else None,
-                    'format': os.path.splitext(csv_path)[1].lstrip('.').lower(),
+                    'format': file_ext.lstrip('.'),
                 }
                 report['datasets'].append(entry)
-                log(f"Finished CSV: {csv_path}")
+                log(f"Finished CSV: {display_path}")
             except Exception:
                 log(f"Error processing {csv_path}:\n{traceback.format_exc()}")
 
