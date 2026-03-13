@@ -1,0 +1,227 @@
+[2025-09-16 05:59:46] Discovered 62 tabular files and 3 image roots
+[2025-09-16 05:59:47] Finished CSV: E:\SIH\smart_crop_model\data\csv\Allindia_market.csv
+[2025-09-16 05:59:47] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crop Yiled with Soil and Weather.csv
+[2025-09-16 05:59:47] Error processing E:\SIH\smart_crop_model\data\csv\cropwise_price.csv:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 481, in main
+    res = train_csv_model(mods, df, purpose, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 254, in train_csv_model
+    pipe.fit(X_train, y_train)
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\pipeline.py", line 663, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 359, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1385, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1395, in _check_y
+    y = check_array(
+        ^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1105, in check_array
+    _assert_all_finite(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y contains NaN.
+
+[2025-09-16 05:59:47] Error processing E:\SIH\smart_crop_model\data\csv\Crop_recommendation.csv:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 481, in main
+    res = train_csv_model(mods, df, purpose, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 254, in train_csv_model
+    pipe.fit(X_train, y_train)
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\pipeline.py", line 663, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 421, in fit
+    y = np.ascontiguousarray(y, dtype=DOUBLE)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'orange'
+
+[2025-09-16 05:59:48] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crop_Yield_Prediction.csv
+[2025-09-16 05:59:48] Finished CSV: E:\SIH\smart_crop_model\data\csv\dataset.csv
+[2025-09-16 05:59:48] Time series too short, skipping
+[2025-09-16 05:59:48] Finished CSV: E:\SIH\smart_crop_model\data\csv\Distictwise_RainFall.csv
+[2025-09-16 05:59:48] Finished CSV: E:\SIH\smart_crop_model\data\csv\rainfall.csv
+[2025-09-16 05:59:49] Finished CSV: E:\SIH\smart_crop_model\data\csv\rainfall_ind.csv
+[2025-09-16 05:59:50] Finished CSV: E:\SIH\smart_crop_model\data\csv\sm_Punjab_2020.csv
+[2025-09-16 05:59:50] Error processing E:\SIH\smart_crop_model\data\csv\storage_capacity.csv:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 481, in main
+    res = train_csv_model(mods, df, purpose, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 254, in train_csv_model
+    pipe.fit(X_train, y_train)
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\pipeline.py", line 663, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 359, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1385, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1395, in _check_y
+    y = check_array(
+        ^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1105, in check_array
+    _assert_all_finite(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y contains NaN.
+
+[2025-09-16 05:59:50] Finished CSV: E:\SIH\smart_crop_model\data\csv\temperature.csv
+[2025-09-16 05:59:50] Error processing E:\SIH\smart_crop_model\data\csv\wheat_rice_tocentralpool.csv:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 481, in main
+    res = train_csv_model(mods, df, purpose, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 254, in train_csv_model
+    pipe.fit(X_train, y_train)
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\pipeline.py", line 663, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 359, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1385, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1395, in _check_y
+    y = check_array(
+        ^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1105, in check_array
+    _assert_all_finite(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y contains NaN.
+
+[2025-09-16 05:59:50] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\apples.csv
+[2025-09-16 05:59:50] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\apricots.csv
+[2025-09-16 05:59:51] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\areca nuts.csv
+[2025-09-16 05:59:51] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\bananas.csv
+[2025-09-16 05:59:51] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\barley.csv
+[2025-09-16 05:59:52] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\beans dry.csv
+[2025-09-16 05:59:52] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\beans green.csv
+[2025-09-16 05:59:52] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\cabbage.csv
+[2025-09-16 05:59:52] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\carrots.csv
+[2025-09-16 05:59:53] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\cashewnuts.csv
+[2025-09-16 05:59:53] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\cauliflower.csv
+[2025-09-16 05:59:53] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\cherries.csv
+[2025-09-16 05:59:54] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\chilli dry.csv
+[2025-09-16 05:59:54] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\chilli green.csv
+[2025-09-16 05:59:54] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\coconuts.csv
+[2025-09-16 05:59:54] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\coffee.csv
+[2025-09-16 05:59:54] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\cucumber.csv
+[2025-09-16 05:59:55] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\eggplant.csv
+[2025-09-16 05:59:55] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\fennel coriander.csv
+[2025-09-16 05:59:55] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\garlic.csv
+[2025-09-16 05:59:55] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\ginger.csv
+[2025-09-16 05:59:55] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\grapes.csv
+[2025-09-16 05:59:56] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\groundnuts.csv
+[2025-09-16 05:59:56] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\lemons.csv
+[2025-09-16 05:59:56] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\lentils.csv
+[2025-09-16 05:59:57] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\lettuce.csv
+[2025-09-16 05:59:57] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\maize.csv
+[2025-09-16 05:59:57] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\mangoes.csv
+[2025-09-16 05:59:57] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\melons.csv
+[2025-09-16 05:59:58] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\nutmeg.csv
+[2025-09-16 05:59:58] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\okra.csv
+[2025-09-16 05:59:58] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\onions.csv
+[2025-09-16 05:59:58] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\oranges.csv
+[2025-09-16 05:59:59] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\papaya.csv
+[2025-09-16 05:59:59] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\peaches.csv
+[2025-09-16 05:59:59] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\pears.csv
+[2025-09-16 05:59:59] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\peas.csv
+[2025-09-16 06:00:00] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\pepper.csv
+[2025-09-16 06:00:00] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\pineapples.csv
+[2025-09-16 06:00:00] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\potatoes.csv
+[2025-09-16 06:00:00] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\pumpkins.csv
+[2025-09-16 06:00:00] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\rice.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\safflower.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\sesame.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\soyabean.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\sugarcane.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\tomatoes.csv
+[2025-09-16 06:00:01] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\watermelon.csv
+[2025-09-16 06:00:02] Finished CSV: E:\SIH\smart_crop_model\data\csv\Crops\wheat.csv
+[2025-09-16 06:00:02] Error processing images E:\SIH\smart_crop_model\data\csv:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 504, in main
+    res = train_image_model(mods, image_root, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 427, in train_image_model
+    prepared = prepare_image_data(mods, image_root)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 376, in prepare_image_data
+    train_ds = tf.keras.preprocessing.image_dataset_from_directory(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\.venv\Lib\site-packages\keras\src\utils\image_dataset_utils.py", line 329, in image_dataset_from_directory
+    raise ValueError(
+ValueError: No images found in directory E:\SIH\smart_crop_model\data\csv. Allowed formats: ('.bmp', '.gif', '.jpeg', '.jpg', '.png')
+
+[2025-09-16 06:00:02] Error processing images E:\SIH\smart_crop_model\data\images:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 504, in main
+    res = train_image_model(mods, image_root, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 427, in train_image_model
+    prepared = prepare_image_data(mods, image_root)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 401, in prepare_image_data
+    class_names = train_ds.class_names
+                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_PrefetchDataset' object has no attribute 'class_names'
+
+[2025-09-16 06:00:02] Error processing images E:\SIH\smart_crop_model\data\images\Soil types:
+Traceback (most recent call last):
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 504, in main
+    res = train_image_model(mods, image_root, save_basename)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 427, in train_image_model
+    prepared = prepare_image_data(mods, image_root)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SIH\smart_crop_model\src\auto_trainer.py", line 401, in prepare_image_data
+    class_names = train_ds.class_names
+                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_PrefetchDataset' object has no attribute 'class_names'
+
+[2025-09-16 06:00:02] Wrote report to E:\SIH\smart_crop_model\reports\report.json
